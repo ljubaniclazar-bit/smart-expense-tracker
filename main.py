@@ -1,11 +1,11 @@
 expenses = {}
 
 while True:
-    category = input("Unesi kategoriju (ili 'exit'): ")
+    category = input("Enter a category (or 'exit'): ")
     if category.lower() == "exit":
         break
 
-    amount = float(input("Unesi iznos: "))
+    amount = float(input("Enter amount: "))
 
     if category in expenses:
         expenses[category] += amount
@@ -14,12 +14,12 @@ while True:
 
 total = sum(expenses.values())
 
-print("\n--- IZVEŠTAJ ---")
+print("\n--- REPORT ---")
 for category, amount in expenses.items():
     print(f"{category}: {amount}")
 
-print("Ukupno potrošeno:", total)
+print("Total spent:", total)
 
-# Najveća kategorija
+# Highest spending category
 max_category = max(expenses, key=expenses.get)
-print("Najviše potrošeno na:", max_category)
+print("Highest spending category:", max_category)
